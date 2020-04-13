@@ -1,0 +1,13 @@
+C:\Users\Dell\Documents\UTN\3er año\Diseño de sistemas\2020\vs ej\Ejercicio61\Ejercicio61\bin\Debug\Ejercicio61.exe.config
+C:\Users\Dell\Documents\UTN\3er año\Diseño de sistemas\2020\vs ej\Ejercicio61\Ejercicio61\bin\Debug\Ejercicio61.exe
+C:\Users\Dell\Documents\UTN\3er año\Diseño de sistemas\2020\vs ej\Ejercicio61\Ejercicio61\bin\Debug\Ejercicio61.pdb
+C:\Users\Dell\Documents\UTN\3er año\Diseño de sistemas\2020\vs ej\Ejercicio61\Ejercicio61\obj\Debug\Ejercicio61.csprojAssemblyReference.cache
+C:\Users\Dell\Documents\UTN\3er año\Diseño de sistemas\2020\vs ej\Ejercicio61\Ejercicio61\obj\Debug\Ejercicio61.exe
+C:\Users\Dell\Documents\UTN\3er año\Diseño de sistemas\2020\vs ej\Ejercicio61\Ejercicio61\obj\Debug\Ejercicio61.pdb
+C:\Users\franc\Desktop\Facultad\Diseño de Sistemas\tareas\Ejercicio61\Ejercicio61\Ejercicio61\bin\Debug\Ejercicio61.exe.config
+C:\Users\franc\Desktop\Facultad\Diseño de Sistemas\tareas\Ejercicio61\Ejercicio61\Ejercicio61\bin\Debug\Ejercicio61.exe
+C:\Users\franc\Desktop\Facultad\Diseño de Sistemas\tareas\Ejercicio61\Ejercicio61\Ejercicio61\bin\Debug\Ejercicio61.pdb
+C:\Users\franc\Desktop\Facultad\Diseño de Sistemas\tareas\Ejercicio61\Ejercicio61\Ejercicio61\obj\Debug\Ejercicio61.csprojAssemblyReference.cache
+C:\Users\franc\Desktop\Facultad\Diseño de Sistemas\tareas\Ejercicio61\Ejercicio61\Ejercicio61\obj\Debug\Ejercicio61.csproj.CoreCompileInputs.cache
+C:\Users\franc\Desktop\Facultad\Diseño de Sistemas\tareas\Ejercicio61\Ejercicio61\Ejercicio61\obj\Debug\Ejercicio61.exe
+C:\Users\franc\Desktop\Facultad\Diseño de Sistemas\tareas\Ejercicio61\Ejercicio61\Ejercicio61\obj\Debug\Ejercicio61.pdb
