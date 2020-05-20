@@ -1,0 +1,4 @@
+C:\Users\franc\Documents\Facultad\Diseño de Sistemas\ReposGIT\DDS2020\Tarea Organizaciones\definirEstructura\obj\Debug\netcoreapp3.1\definirEstructura.csprojAssemblyReference.cache
+C:\Users\franc\Documents\Facultad\Diseño de Sistemas\ReposGIT\DDS2020\Tarea Organizaciones\definirEstructura\obj\Debug\netcoreapp3.1\definirEstructura.csproj.CoreCompileInputs.cache
+C:\Users\franc\Documents\Facultad\Diseño de Sistemas\ReposGIT\DDS2020\Tarea Organizaciones\definirEstructura\obj\Debug\netcoreapp3.1\definirEstructura.AssemblyInfoInputs.cache
+C:\Users\franc\Documents\Facultad\Diseño de Sistemas\ReposGIT\DDS2020\Tarea Organizaciones\definirEstructura\obj\Debug\netcoreapp3.1\definirEstructura.AssemblyInfo.cs

@@ -1,15 +1,51 @@
 ﻿
+using System.Security.Cryptography.X509Certificates;
+
 class TipoEntidad
 {
     private Actividad actividad;
     private int cantidadDePersonal;
     private float promedioVentasAnuales;
     private Estructura estructura;
+    bool esActividadComisionista;
+    bool esAgenciaDeViaje;
     public void definirEstructura()
     {
+        if (this.esActividadComisionista || this.esAgenciaDeViaje){
+            for (int i = 0; i < 4; i++) {
+                if (cantidadDePersonal <= actividad.CantidadPersonalMax[i]){
+                    this.definirTamaño(i);
+                }
+            }
+        } else {
+            for (int i = 0; i < 4; i++){
+                if (promedioVentasAnuales <= actividad.PromedioVentasMax[i] && cantidadDePersonal <= actividad.CantidadPersonalMax[i]){
+                    this.definirTamaño(i);
+                }
+            }
+        }
+    }
 
+    public void definirTamaño(int i)
+    {
+        switch (i)
+        {
+            case 0:
+                estructura = new Micro();
+                break;
+            case 1:
+                estructura = new Pequeña();
+                break;
+            case 2:
+                estructura = new MedianaTramo1();
+                break;
+            case 3:
+                estructura = new MedianaTramo2();
+                break;
+        }
     }
 }
+
 
 internal class Estructura
 {
