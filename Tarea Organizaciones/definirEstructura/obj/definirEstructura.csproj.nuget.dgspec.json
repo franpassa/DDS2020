@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\franc\\Documents\\Facultad\\Diseño de Sistemas\\ReposGIT\\DDS2020\\Tarea Organizaciones\\definirEstructura\\definirEstructura.csproj": {}
+    "C:\\Users\\Dell\\Documents\\UTN\\3er año\\Diseño de sistemas\\2020\\DDS2020\\Tarea Organizaciones\\definirEstructura\\definirEstructura.csproj": {}
   },
   "projects": {
-    "C:\\Users\\franc\\Documents\\Facultad\\Diseño de Sistemas\\ReposGIT\\DDS2020\\Tarea Organizaciones\\definirEstructura\\definirEstructura.csproj": {
+    "C:\\Users\\Dell\\Documents\\UTN\\3er año\\Diseño de sistemas\\2020\\DDS2020\\Tarea Organizaciones\\definirEstructura\\definirEstructura.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\Documents\\Facultad\\Diseño de Sistemas\\ReposGIT\\DDS2020\\Tarea Organizaciones\\definirEstructura\\definirEstructura.csproj",
+        "projectUniqueName": "C:\\Users\\Dell\\Documents\\UTN\\3er año\\Diseño de sistemas\\2020\\DDS2020\\Tarea Organizaciones\\definirEstructura\\definirEstructura.csproj",
         "projectName": "definirEstructura",
-        "projectPath": "C:\\Users\\franc\\Documents\\Facultad\\Diseño de Sistemas\\ReposGIT\\DDS2020\\Tarea Organizaciones\\definirEstructura\\definirEstructura.csproj",
-        "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\franc\\Documents\\Facultad\\Diseño de Sistemas\\ReposGIT\\DDS2020\\Tarea Organizaciones\\definirEstructura\\obj\\",
+        "projectPath": "C:\\Users\\Dell\\Documents\\UTN\\3er año\\Diseño de sistemas\\2020\\DDS2020\\Tarea Organizaciones\\definirEstructura\\definirEstructura.csproj",
+        "packagesPath": "C:\\Users\\Dell\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Dell\\Documents\\UTN\\3er año\\Diseño de sistemas\\2020\\DDS2020\\Tarea Organizaciones\\definirEstructura\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Dell\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
