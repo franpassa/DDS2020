@@ -8,48 +8,49 @@ namespace Ejercicio_133
     public class Cajero
     {
         float dinero; // Dinero disponible
-        string ticket;
-        DateTime tiempoEntradaTicket;
+        float precioPorHora;
+        bool hayCambio = true;
 
-        public Cajero(float _dinero, string _ticket)
+        public Cajero(float dinero, bool hayCambio, float precioPorHora)
         {
-            this.dinero = _dinero;
-            this.ticket = _ticket;
+            this.dinero = dinero;
+            this.HayCambio = hayCambio;
+            this.precioPorHora = precioPorHora;
         }
 
 
         public float Dinero { get => dinero; set => dinero = value; }
-        public string Ticket { get => ticket; set => ticket = value; }
-        public DateTime TiempoEntradaTicket { get => tiempoEntradaTicket; set => tiempoEntradaTicket = value; }
+        public float PrecioPorHora { get => precioPorHora; set => precioPorHora = value; }
+        public bool HayCambio { get => hayCambio; set => hayCambio = value; }
 
-        public float calcularImporte()
+        public float calcularImporte( DateTime horaTicket)
         {
-            float importe = ticket.Length * 3; // Como no dice como se calcula, hicimos la longuitud del ticket * 3
-            Console.WriteLine("Importe: ", importe);
-            return importe;
+            DateTime horaActual = DateTime.Now;
+            int horas = horaActual.Hour - horaTicket.Hour;
+            int minutos = horaActual.Minute - horaTicket.Minute;
+            float tiempoEstacionado = horas + minutos * (1/60);
+            return tiempoEstacionado * PrecioPorHora;
         }
 
-        public bool resultadoValidacion(float _dinero)
+        public void cobrar(float importe, float dineroIngresado)
         {
-            if((_dinero >= calcularImporte())          // El dinero que entra es mayor al importe
-                &&     
-               (calcularImporte() - _dinero >= dinero)) // Hay vuelto
+                Dinero += dineroIngresado;
+
+            if (dineroIngresado > importe)
             {
-                Console.WriteLine("Vuelto: ", calcularImporte() - _dinero);
-                return true;
+                if (HayCambio)
+                {
+                    Dinero -= (dineroIngresado - importe);
+                }
             }
-            else 
-            if((_dinero >= calcularImporte())          // El dinero que entra es mayor al importe
-                &&
-               (calcularImporte() - _dinero < dinero)) // No hay vuelto
-            {
-                Console.WriteLine("Vuelto: 0");
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+
+            verificarEstadoTicket();
+        }
+
+        public void verificarEstadoTicket()
+        {
+            //interaccion con hw del cajero (sensor del ticket por ej)
+            //verifica si el ticket esta en el cajero, lo retiene de ser necesario y emite pitido
         }
     }
 }
