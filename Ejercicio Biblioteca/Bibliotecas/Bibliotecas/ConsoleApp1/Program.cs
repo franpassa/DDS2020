@@ -16,7 +16,7 @@ namespace Bibliotecas
         {
             using (var context = new Context())
             {
-                Autor autor = new Autor(1,"pepe","hoy","argentino");
+                Autor autor = new Autor(1,"juan","hoy","argentino");
                 context.Autores.Add(autor);
                 if (context.SaveChanges() > 0)
                 {
@@ -27,6 +27,8 @@ namespace Bibliotecas
                 {
                     Console.WriteLine("Error creando el Autor");
                 }
+
+                
             }
         }
     }

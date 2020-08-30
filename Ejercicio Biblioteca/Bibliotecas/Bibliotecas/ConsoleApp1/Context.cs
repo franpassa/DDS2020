@@ -13,6 +13,8 @@ namespace Bibliotecas
     {
         public DbSet<Autor> Autores { get; set; }
 
+        public DbSet<Libro> Libros { get; set; }
+
         public Context() : base("ContextDB")
         {
             Database.SetInitializer<Context>(new CreateDatabaseIfNotExists<Context>());

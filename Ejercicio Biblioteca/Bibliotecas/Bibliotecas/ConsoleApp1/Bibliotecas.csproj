@@ -106,9 +106,10 @@
   <ItemGroup>
     <Compile Include="Autor.cs" />
     <Compile Include="Context.cs" />
-    <Compile Include="Migrations\202008302117362_InitalMigration.cs" />
-    <Compile Include="Migrations\202008302117362_InitalMigration.designer.cs">
-      <DependentUpon>202008302117362_InitalMigration.cs</DependentUpon>
+    <Compile Include="Libro.cs" />
+    <Compile Include="Migrations\202008302228254_InitialMigration.cs" />
+    <Compile Include="Migrations\202008302228254_InitialMigration.designer.cs">
+      <DependentUpon>202008302228254_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
@@ -119,8 +120,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008302117362_InitalMigration.resx">
-      <DependentUpon>202008302117362_InitalMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008302228254_InitialMigration.resx">
+      <DependentUpon>202008302228254_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
