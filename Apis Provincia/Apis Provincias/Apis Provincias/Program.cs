@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net;
 using System.IO;
+using Newtonsoft.Json;
+using RestSharp;
 
 namespace Apis_Provincias
 {
@@ -13,80 +15,121 @@ namespace Apis_Provincias
     {
         static void Main(string[] args)
         {
+            
+            WebRequest requestGob = HttpWebRequest.Create("https://apis.datos.gob.ar/georef/api/provincias");
+            WebResponse responseGob = requestGob.GetResponse();
+            StreamReader readerGob = new StreamReader(responseGob.GetResponseStream());
 
-            WebRequest request = HttpWebRequest.Create("https://apis.datos.gob.ar/georef/api/provincias?campos=nombre");
-            WebResponse response = request.GetResponse();
-            StreamReader reader = new StreamReader(response.GetResponseStream());
+            string rootGob_JSON = readerGob.ReadToEnd();
+            RootGob rootGob = Newtonsoft.Json.JsonConvert.DeserializeObject<RootGob>(rootGob_JSON);
 
-            string root_JSON = reader.ReadToEnd();
-            Root root = Newtonsoft.Json.JsonConvert.DeserializeObject<Root>(root_JSON);
+            WebRequest requestML = HttpWebRequest.Create("https://api.mercadolibre.com/classified_locations/countries/AR");
+            WebResponse responseML = requestML.GetResponse();
+            StreamReader readerML = new StreamReader(responseML.GetResponseStream());
 
-            foreach (Provincia provincia in root.provincias)
+            string rootML_JSON = readerML.ReadToEnd();
+            RootML rootML = Newtonsoft.Json.JsonConvert.DeserializeObject<RootML>(rootML_JSON);
+
+            Console.WriteLine("Provincias en comun entre las 2 APIS: \n");
+            foreach (ProvinciaGob provinciaGob in rootGob.provincias)
             {
-                Console.WriteLine("Provincia: " + provincia.nombre);
-                Console.WriteLine("ID: " + provincia.id);
+                foreach(StateML provinciaML in rootML.states)
+                {
+                    if(provinciaGob.nombre == provinciaML.name)
+                    {
+                        Console.WriteLine(provinciaGob.nombre);
+                    }
+                }
             }
             Console.ReadLine();
 
-            /*
-            foreach (Provincia provincia in root.provincias) {
-                WebRequest prov_request = HttpWebRequest.Create("https://apis.datos.gob.ar/georef/api/provincias?campos=nombre" + provincia);
-                WebResponse prov_response = prov_request.GetResponse();
-                StreamReader prov_reader = new StreamReader(prov_response.GetResponseStream());
-
-                string prov_JSON = prov_reader.ReadToEnd();
-                provincia.insertarJson(prov_JSON);
-
-                Console.WriteLine(provincia.nombre);
-                Console.WriteLine(provincia.id);
-                Console.WriteLine(provincia.centroide.lat);
-                Console.WriteLine(provincia.centroide.lon);
-            }
-            */
+            rootGob.mostrarProvincias();
+            rootML.mostrarProvincias();
         }
     }
 
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
+    // Gobierno Argentino
+    public class ParametrosGob
+    {
+    }
 
-    // Clases creadas con https://json2csharp.com/
-    public class Centroide
+    public class CentroideGob
     {
         public double lat { get; set; }
         public double lon { get; set; }
     }
 
-    public class Provincia
+    public class ProvinciaGob
     {
-        public string nombre { get; set; }
+        public CentroideGob centroide { get; set; }
         public string id { get; set; }
-        public Centroide centroide { get; set; }
+        public string nombre { get; set; }
+    }
 
-        public void insertarJson(string prov_JSON)
+    public class RootGob
+    {
+        public int cantidad { get; set; }
+        public int inicio { get; set; }
+        public ParametrosGob parametros { get; set; }
+        public List<ProvinciaGob> provincias { get; set; }
+        public int total { get; set; }
+
+        public void mostrarProvincias()
         {
-            Provincia aux = Newtonsoft.Json.JsonConvert.DeserializeObject<Provincia>(prov_JSON);
+            Console.WriteLine("\n\nProvincias de la API del Gobierno_______________________________________\n");
 
-            nombre = aux.nombre;
-            id = aux.id;
-            centroide.lat = aux.centroide.lat;
-            centroide.lon = aux.centroide.lon;
+            foreach (ProvinciaGob provincia in this.provincias)
+            {
+                Console.WriteLine("\nProvincia: " + provincia.nombre);
+                Console.WriteLine("ID: " + provincia.id);
+                Console.WriteLine("Lat: " + provincia.centroide.lat);
+                Console.WriteLine("Lon: " + provincia.centroide.lon);
+            }
+            Console.ReadLine();
         }
     }
 
-    public class Municipio
+    // MercadoLibre
+    public class RootML
     {
-        public string nombre { get; set; }
         public string id { get; set; }
+        public string name { get; set; }
+        public string locale { get; set; }
+        public string currency_id { get; set; }
+        public string decimal_separator { get; set; }
+        public string thousands_separator { get; set; }
+        public string time_zone { get; set; }
+        public GeoInformationML geo_information { get; set; }
+        public List<StateML> states { get; set; }
+
+        public void mostrarProvincias()
+        {
+            Console.WriteLine("\n\nProvincias de la API de MercadoLibre_______________________________________ \n");
+
+            foreach (StateML provincia in this.states)
+            {
+                Console.WriteLine("\nProvincia: " + provincia.name);
+                Console.WriteLine("ID: " + provincia.id);
+            }
+
+            Console.ReadLine();
+        }
     }
 
-    public class Root
+    public class LocationML
     {
-        public List<Provincia> provincias { get; set; }
-
+        public double latitude { get; set; }
+        public double longitude { get; set; }
     }
-    // Root myDeserializedClass = JsonConvert.DeserializeObject<Root>(myJsonResponse); 
-    public class Parametros
+
+    public class GeoInformationML
+    {     
+        public LocationML location { get; set; }
+    }
+
+    public class StateML
     {
-        public List<string> campos { get; set; }
+        public string id { get; set; }
+        public string name { get; set; }
     }
-
 }
