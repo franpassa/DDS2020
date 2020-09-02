@@ -105,13 +105,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Autor.cs" />
+    <Compile Include="Biblioteca.cs" />
+    <Compile Include="ConRetraso.cs" />
     <Compile Include="Context.cs" />
+    <Compile Include="Copia.cs" />
+    <Compile Include="EnReparacion.cs" />
+    <Compile Include="EstadoCopia.cs" />
+    <Compile Include="Lector.cs" />
+    <Compile Include="Libre.cs" />
     <Compile Include="Libro.cs" />
-    <Compile Include="Migrations\202008302228254_InitialMigration.cs" />
-    <Compile Include="Migrations\202008302228254_InitialMigration.designer.cs">
-      <DependentUpon>202008302228254_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\202008302249125_MigracionInicial.cs" />
+    <Compile Include="Migrations\202008302249125_MigracionInicial.designer.cs">
+      <DependentUpon>202008302249125_MigracionInicial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202008310255306_migration.cs" />
+    <Compile Include="Migrations\202008310255306_migration.designer.cs">
+      <DependentUpon>202008310255306_migration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Prestada.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -120,8 +132,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202008302228254_InitialMigration.resx">
-      <DependentUpon>202008302228254_InitialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202008302249125_MigracionInicial.resx">
+      <DependentUpon>202008302249125_MigracionInicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202008310255306_migration.resx">
+      <DependentUpon>202008310255306_migration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
