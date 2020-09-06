@@ -40,6 +40,7 @@ namespace API_MercadoLibre {
                 id_paises.Add(pais.id);
             }
 
+            paises = new List<Pais> { };
             // Recorro la lista de IDs de paises y agrego cada uno a la lista "Paises" de Mundo
             foreach (string id in id_paises)
             {

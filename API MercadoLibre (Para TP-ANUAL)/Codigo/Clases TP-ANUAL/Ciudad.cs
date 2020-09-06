@@ -20,6 +20,11 @@ namespace API_MercadoLibre {
 		public String id;
 		public String nombre;
 
+		public Ciudad()
+        {
+
+        }
+
 		public Ciudad(String _id){
 			WebRequest request_ciudad = HttpWebRequest.Create("https://api.mercadolibre.com/classified_locations/cities/" + _id);
 			bool leidoCorrectamente = true;

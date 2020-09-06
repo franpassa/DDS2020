@@ -44,18 +44,22 @@ namespace API_MercadoLibre {
 
 				id = ML_StateObject.id;
 				nombre = ML_StateObject.name;
+				
 				llenarCiudades(ML_StateObject.cities);
 			}
 		}
 
 		private void llenarCiudades(List<ML_PlaceSmall> _ciudades) 
 		{
+			ciudades = new List<Ciudad> { };
 			// Checkeo que no este vacia
 			if (_ciudades?.Any() == true)
 			{
 				foreach (ML_PlaceSmall ciudad in _ciudades)
 				{
-					ciudades.Add(new Ciudad(ciudad.id));
+					Console.WriteLine(ciudad.id);
+					Ciudad nuevaCiudad = new Ciudad(ciudad.id);
+					ciudades.Add(nuevaCiudad);
 				}
 			}
 		}

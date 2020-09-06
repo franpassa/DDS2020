@@ -11,6 +11,7 @@ namespace API_MercadoLibre
     {
         static void Main(string[] args)
         {
+            /*
             Ciudad caballito = new Ciudad("TUxBQkNBQjM4MDda");
             Console.WriteLine(caballito.nombre);
 
@@ -19,15 +20,11 @@ namespace API_MercadoLibre
 
             Provincia capFed = new Provincia("AR-C");
             Console.WriteLine(capFed.nombre);
+                        
+            
 
-            /*
-            Pais arg = new Pais("AR");
-            Console.WriteLine(arg.nombre);
-            Console.WriteLine(arg.provincias[0].nombre);
-            Console.WriteLine(arg.moneda.descripcion);
-         
             API_MercadoLibre ml = new API_MercadoLibre();
-            foreach(Pais p in API_MercadoLibre.paises)
+            foreach(Pais p in ml.paises)
             {
                 Console.WriteLine("________________________________________________________________________");
                 Console.WriteLine("ID: " + p.id);
@@ -49,7 +46,13 @@ namespace API_MercadoLibre
                     }
                 }
             }
-            
+            */
+
+            Pais arg = new Pais("AR");
+            Console.WriteLine(arg.nombre);
+            Console.WriteLine(arg.provincias[0].nombre);
+            Console.WriteLine(arg.moneda.descripcion);
+
             Console.WriteLine("________________________________________________________________________");
             Console.WriteLine("ID: " + arg.id);
             Console.WriteLine("Nombre pais: " + arg.nombre);
@@ -66,7 +69,6 @@ namespace API_MercadoLibre
                     Console.WriteLine("        Nombre ciudad: " + prov.nombre);
                 }
             }
-            */
             
             
             Console.ReadLine();

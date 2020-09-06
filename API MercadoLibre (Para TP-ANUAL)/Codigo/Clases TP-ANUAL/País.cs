@@ -55,6 +55,7 @@ namespace API_MercadoLibre {
 
 		private void llenarProvincias(List<ML_PlaceSmall> _provincias)
 		{
+			provincias = new List<Provincia> { };
 			// Checkeo que la lista no esté vacía
 			if (_provincias?.Any() == true)
 			{ 
