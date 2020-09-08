@@ -10,9 +10,9 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
-using API_MercadoLibre;
 using System.Net;
 using System.Linq;
+using API_MercadoLibre;
 
 namespace API_MercadoLibre {
 	public class Pais {
@@ -34,7 +34,9 @@ namespace API_MercadoLibre {
 			catch (System.Net.WebException e)
 			{
 				Console.WriteLine("{0} Exception caught.", e);
+				Console.WriteLine("Id de pais " + _id + " erroneo.");
 				leidoCorrectamente = false;
+				Console.WriteLine(_id);
 			}
 			if (leidoCorrectamente)
 			{
@@ -49,6 +51,8 @@ namespace API_MercadoLibre {
 				nombre = ML_CountryObject.name;
 				moneda = new Moneda(ML_CountryObject.currency_id);
 
+                this.imprimir();
+
 				llenarProvincias(ML_CountryObject.states);
 			}
 		}
@@ -56,14 +60,23 @@ namespace API_MercadoLibre {
 		private void llenarProvincias(List<ML_PlaceSmall> _provincias)
 		{
 			provincias = new List<Provincia> { };
-			// Checkeo que la lista no esté vacía
+			// Chequeo que la lista no esté vacía
 			if (_provincias?.Any() == true)
 			{ 
 				foreach (ML_PlaceSmall provincia in _provincias)
 				{
-					provincias.Add(new Provincia(id));
+					//Console.WriteLine(provincia.name);
+					provincias.Add(new Provincia(provincia.id));
 				}
 			}
+		}
+
+		public void imprimir()
+        {
+			Console.WriteLine("____________________________________________________________________________________");
+			Console.WriteLine("ID: " + id);
+			Console.WriteLine("Nombre pais: " + nombre);
+			Console.WriteLine("Moneda pais: " + moneda.descripcion);
 		}
 	}
 }

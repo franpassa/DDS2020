@@ -11,6 +11,8 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Net;
+using System.Linq;
+using API_MercadoLibre;
 
 namespace API_MercadoLibre {
 	public class Moneda {
@@ -30,7 +32,8 @@ namespace API_MercadoLibre {
 			}
 			catch (System.Net.WebException e)
 			{
-				Console.WriteLine("{0} Exception caught.", e);
+                Console.WriteLine("{0} Exception caught.", e);
+				Console.WriteLine("Id de moneda " + _id + " erroneo.");
 				error = true;
 			}
 			if (!error)
